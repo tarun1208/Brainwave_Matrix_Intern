@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Day Planner</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1> Day Planner </h1>
+            <p class="subtitle">Organize Your Day</p>
+            <div class="mood-tracker">
+                <h3> How are you feeling today</h3>
+                <div class="mood-selector">
+                    <span class="mood-emoji" data-mood="excited">🤩</span>
+                    <span class="mood-emoji" data-mood="happy">😊</span>
+                    <span class="mood-emoji" data-mood="neutral">😐</span>
+                    <span class="mood-emoji" data-mood="tired">😴</span>
+                    <span class="mood-emoji" data-mood="stressed">😤</span>
+                </div>
+            </div>
+            <div class="productivity-bar">
+                <div class="productivity-stats">
+                    <div class="stat-item">
+                        <svg class="progress-ring" viewBox="0 0 60 60">
+                            <circle class="progress-background" cx="30" cy="30" r="25"></circle>
+                            <circle class="progress-bar" cx="30" cy="30" r="25"></circle>
+                        </svg>
+                        <span class="stat-number" id="completionRate">0%</span>
+                        <div class="stat-label">Completion Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalTasks">0</span>
+                        <div class="stat-label">Total Tasks</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="focusTime">0h</span>
+                        <div class="stat-label">Focus Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="productivity">85</span>
+                        <div class="stat-label">Productivity Score</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-controls">
+                <div class="date-control">
+                    <label for="planner-date">📅 Select Date</label>
+                    <input type="date" id="planner-date" />
+                </div>
+                <div class="weather-widget" id="weatherWidget">
+                    <span>🌤️</span>
+                    <span>22°C - Partly Cloudy</span>
+                </div>
+                <div class="action-buttons">
+                    <button id="clearAll" class="btn clear-btn">🧹 Clear All</button>
+                    <button id="syncBtn" class="btn sync-btn">🔄 Smart Sync</button>
+                </div>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="status-indicator status-past"></span>
+                    Past Hours
+                </div>
+                <div class="legend-item">
+                    <span class="status-indicator status-present"></span>
+                    Current Hour
+                </div>
+                <div class="legend-item">
+                    <span class="status-indicator status-future"></span>
+                    Future Hours
+                </div>
+                <div class="legend-item">
+                    <span style="background: #e74c3c; width: 12px; height: 12px; border-radius: 50%; display: inline-block;"></span>
+                    High Priority
+                </div>
+                <div class="legend-item">
+                    <span style="background: #f39c12; width: 12px; height: 12px; border-radius: 50%; display: inline-block;"></span>
+                    Medium Priority
+                </div>
+            </div>
+            <div id="planner"></div>
+        </div>
+
+        <div id="notification" class="notification"></div>
+        <script src="script.js"></script>
+    </body>
+</html>
